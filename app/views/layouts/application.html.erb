@@ -11,6 +11,16 @@
   </head>
 
   <body>
-    <%= yield %>
+    <% if user_signed_in? %>
+      <%= render 'header/header'%>
+    <% end %>
+    <% if alert %>
+       <p class="alert"><%= alert %></p>
+    <% elsif notice %>
+      <p class="notice"><%= notice %></p>
+    <% end %>
+    <main>
+      <%= yield %>
+    </main>
   </body>
 </html>
