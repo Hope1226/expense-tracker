@@ -5,4 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   # validation
   validates :name, presence: { message: 'This field can not be blank' }
+  has_many :groups, dependent: :destroy
 end
