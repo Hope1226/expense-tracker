@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   root to: "categories#index"
   
-  resources :categories, only: %i[index, show]
+  resources :categories, only: %i[index show] do 
+    resources :transactions, only: %i[index show]
+  end
 
   # Defines the root path route ("/")
   # root "articles#index"
