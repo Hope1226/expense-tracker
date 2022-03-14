@@ -1,5 +1,5 @@
 class Group < ApplicationRecord
-   # validation
+  # validation
   validates :name, presence: { message: 'This field can not be blank' }
   validates :icon, presence: { message: 'This field can not be blank' }
 
