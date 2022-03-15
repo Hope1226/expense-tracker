@@ -2,7 +2,7 @@ class CategoriesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @categories = Group.all.where(user_id: current_uder.id);
+    @categories = Group.all.where(user_id: current_user.id)
   end
 
   def show
@@ -17,7 +17,7 @@ class CategoriesController < ApplicationController
     @new_category = Group.new(group_params)
 
     if @new_category.save
-      redirect_to :index, notice: 'Category successfully created'
+      redirect_to categories_path, notice: 'Category successfully created'
     else
       render :new, alert: 'Oops, Something went wrong'
     end
@@ -33,6 +33,6 @@ class CategoriesController < ApplicationController
   private
 
   def group_params
-    params.require(:group).permit(:name, :icon, :user_id)
+    params.permit(:name, :icon, :user_id)
   end
 end
