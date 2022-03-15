@@ -6,4 +6,10 @@ class Group < ApplicationRecord
 
   belongs_to :user
   has_and_belongs_to_many :entities
+
+  def calculate_total
+    total = 0
+    entities.each { |item| total += item.amount }
+    total
+  end
 end

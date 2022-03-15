@@ -1,3 +1,20 @@
-<div>
+<div class="main-categories-page">
+  <div class="main-dashbord">
+    <h2>Total spending for current period:<h2>
+    <div class="innder-dashboard">
+      <h3> $
+      <% if current_user.total_expense.positive? %>
+       - <%= current_user.total_expense %>.00
+      <% else %>
+        <%= current_user.total_expense %>.00
+      <% end %>
+      </h3>
+    </div>
+  </div>
+  <div class="categories-container">
+    <% @categories.each do |category| %>
+       <%= render 'category', category: category %>
+    <% end %> 
+  </div>
   <%= link_to "Add new category", new_category_path %>
 </div>
