@@ -91,7 +91,7 @@ main {
 .category-cards {
   background: var(--heading-color);
   border: none;
-  box-shadow: 0 0 5px 0 #cacaca;
+  box-shadow: 0 0 5px 0 #e4e4e4;
   border-radius: 2px;
 }
 
