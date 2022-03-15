@@ -1,1 +1,9 @@
-<h2>User's profiel</h2>
+<div class="user-profile">
+  <div class="image-container">
+    <%= image_tag "profile-img.svg"%>
+  </div>
+  <div class="user-profile-actions">
+    <%= link_to "Edit Profile", edit_user_registration_path, class: "nav-links"%>
+    <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "nav-links"%>
+  </div>
+</div>

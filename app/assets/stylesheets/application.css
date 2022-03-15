@@ -13,3 +13,188 @@
  *= require_tree .
  *= require_self
  */
+ @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+  --main-color: #3778c2;
+  --second-color: #5fb523;
+  --text-color: #434b54;
+  --mani-bg: #eeeeee;
+  --heading-size: 24px;
+  --text-size: 16px;
+  --main-font: 'Montserrat', sans-serif;
+  --heading-color: #ffffff;
+  --text-font-weight: 200;
+  --heding-font-weight: 400;
+  --amount-font-weight: 600;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+     -moz-box-sizing: inherit;
+          box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-decoration: none;
+  font-family: var(--main-font);
+  color: var(--text-color);
+}
+
+body,
+main {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  background: var(--mani-bg);
+}
+
+.main-headings {
+  font-weight: var(--heding-font-weight);
+  text-transform: uppercase;
+  color: var(--heading-color);
+  font-size: var(--heading-size);
+  text-align: center;
+}
+
+.header {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  padding: 20px 10px;background: var(--main-color);
+}
+
+.main-categories-page {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr;
+  grid-gap: 10px;
+}
+
+.main-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 2fr;
+  grid-gap: 10px;
+  padding: 0 10px;
+}
+
+.main-dashbord,
+.category-cards {
+  background: var(--heading-color);
+  border: none;
+  box-shadow: 0 0 5px 0 #cacaca;
+  border-radius: 2px;
+}
+
+.main-dashbord {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr;
+  justify-items: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.subheadings {
+  font-size: var(--text-size);
+  font-weight: var(--text-font-weight);
+  justify-self: start;
+}
+
+.total-ammount {
+  font-size: 50px;
+  font-weight: var(--heding-font-weight);
+}
+
+.categories-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.category-cards {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  justify-items: center;
+  grid-gap: 10px;
+}
+
+.icon-container {
+  padding: 15px;
+  background: red;
+  border-radius: 3px;
+}
+
+.card-content {
+  justify-self: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px 0 10px 0;
+}
+
+.card-content-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.category-amount {
+  font-weight: 500;
+}
+
+.card-content-footer {
+  border-top: 1px solid #eeeeee;
+}
+
+small {
+  font-size: 12px;
+}
+
+.category-actions {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+}
+
+.category-actions a {
+  padding: 30px 0;
+  background: #434b5457;
+}
+.outer-icon-container {
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+}
+
+.categories-actions-outer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.categories-actions-inner {
+  width: 70px;
+  height: 70px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  background: var(--second-color);
+  border-radius: 50%;
+}
+
+.categories-actions-inner a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
