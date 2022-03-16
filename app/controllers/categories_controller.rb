@@ -13,7 +13,9 @@ class CategoriesController < ApplicationController
     Group.new
   end
 
-  def edit; end
+  def edit
+    @category = Group.find(params[:id])
+  end
 
   def create
     @new_category = Group.new(group_params)

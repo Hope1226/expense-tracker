@@ -11,6 +11,10 @@ class TransactionsController < ApplicationController
     Entity.new
   end
 
+  def edit
+    @transaction = Entity.find(params[:id])
+  end
+
   def create
     @new_entity = Entity.new(entity_params)
 
@@ -25,6 +29,18 @@ class TransactionsController < ApplicationController
     Entity.find(params[:id]).delete
     respond_to do |format|
       format.html { redirect_to category_path(id: params[:category_id], notice: 'Category successfully removed') }
+    end
+  end
+
+  def update
+    @transaction = Entity.find(params[:id])
+
+    respond_to do |format|
+      if @transaction.update(entity_params)
+        format.html { redirect_to category_transaction_path({ id: @transaction.id, category_id: @transaction.group_id }), notice: 'Changes was successfully saved' }
+      else
+        format.html { render :edt, status: :unprocessable_entity }
+      end
     end
   end
 
