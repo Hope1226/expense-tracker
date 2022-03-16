@@ -198,3 +198,11 @@ small {
   justify-content: center;
   align-items: center;
 }
+
+.transaction-cards {
+  grid-template-columns: 1fr auto;
+}
+
+.transaction-content {
+  padding: 10px;
+}
