@@ -206,3 +206,7 @@ small {
 .transaction-content {
   padding: 10px;
 }
+
+.category-header {
+  grid-template-columns: auto 1fr auto;
+}
