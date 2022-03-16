@@ -1,4 +1,8 @@
 class TransactionsController < ApplicationController
+  def index
+    @transactions = Entity.all.where(user_id: current_user.id)
+  end
+
   def show
     @transaction = Entity.find(params[:id])
   end
@@ -27,6 +31,6 @@ class TransactionsController < ApplicationController
   private
 
   def entity_params
-    params.permit(:name, :amount, :user_id, :category_id)
+    params.permit(:name, :amount, :user_id, :group_id)
   end
 end
