@@ -5,7 +5,7 @@ class Group < ApplicationRecord
   validates :icon, presence: { message: 'This field can not be blank' }
 
   belongs_to :user
-  has_many :entities, dependent: :destroy
+  has_many :entities, dependent: :delete_all
 
   def calculate_total
     total = 0
