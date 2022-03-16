@@ -6,5 +6,5 @@ class Entity < ApplicationRecord
                             message: 'The input should be greater or equal to 0' }
 
   belongs_to :user
-  has_and_belongs_to_many :groups
+  belongs_to :group
 end
