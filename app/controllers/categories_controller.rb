@@ -13,6 +13,8 @@ class CategoriesController < ApplicationController
     Group.new
   end
 
+  def edit; end
+
   def create
     @new_category = Group.new(group_params)
 
@@ -24,9 +26,21 @@ class CategoriesController < ApplicationController
   end
 
   def destroy
-    Group.find(params[:id]).delete
+    Group.find(params[:id]).destroy
     respond_to do |format|
-      format.html { redirect_to :index, notice: 'Category successfully removed' }
+      format.html { redirect_to categories_path, notice: 'Category successfully removed' }
+    end
+  end
+
+  def update
+    @category = Group.find(params[:id])
+
+    respond_to do |format|
+      if @category.update(group_params)
+        format.html { redirect_to categories_path, notice: 'Changes was successfully saved.' }
+      else
+        format.html { render :edt, status: :unprocessable_entity }
+      end
     end
   end
 
