@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root to: "categories#index"
   
   resources :categories do 
-    resources :transactions, only: %i[index show new create destroy]
+    resources :transactions
   end
 
   resources :users, only: %i[show]
