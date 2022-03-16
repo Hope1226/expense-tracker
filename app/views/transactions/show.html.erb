@@ -2,11 +2,11 @@
   <div class="header category-header">
     <%= link_to raw(image_tag "backwards-arrow.svg"), category_path({id: @transaction.group_id}) %>
     <h1 class="main-headings">Details</h1>
-    <%= link_to raw(image_tag "settings-icon.svg"), edit_category_path({id: @transaction.id}) %>
+    <%= link_to raw(image_tag "settings-icon.svg"), edit_category_transaction_path({id: @transaction.id, category_id: @transaction.group_id}) %>
   </div>
 
-  <div class="main-content">
-    <div class="main-dashbord">
+  <div class="main-content trans-main-content">
+    <div class="trans-dashboard">
       <div class="trans-dashboard-header">
         <%case @transaction.group.icon %>
           <%when "entertainment"%>
@@ -43,19 +43,21 @@
             </div>
         <% end %>
         <div class="trans-headings">
-          <h2 class="subheadings"><%= @transaction.name %><h2>
+          <h2 class="trans-subheadings"><%= @transaction.name %><h2>
         </div>
       </div>
       <div class="trans-dashboard-content">
-        <h2 class="subheadings"> Transaction # 10000<%= @transaction.id %>
-        <small>
-          <%= image_tag 'calendar-icon.svg' %>
-          <p><%= @transaction.created_at.strftime("%d %B, %Y at %I:%M%p") %><p>
-        </small>
+        <h2 class="trans-subheadings"> Transaction # 10000<%= @transaction.id %></h2>
+        <div>
+          <small class="trans-dash-date">
+            <%= image_tag 'calendar-icon.svg' %>
+            <p><%= @transaction.created_at.strftime("%d %B, %Y at %I:%M%p") %><p>
+          </small>
+        </div>
       </div>
       <div class="trans-footer">
-        <h2>Total spending</h2>
-        <h2>$ <%= @transaction.amount %></h2>
+        <h2 class="trans-subheadings sub-uppercase">Total spending</h2>
+        <h2 class="trans-subheadings">$ <%= @transaction.amount %>.00</h2>
       </div>
     </div>
   </div>

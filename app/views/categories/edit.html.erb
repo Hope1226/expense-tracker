@@ -3,7 +3,7 @@
   <%=form_with(model: @group, url: category_path, method: :put, local: true) do |f| %>
     <div class="field">
       <%= f.label(:name, "Name") %>
-      <%= f.text_field :name %>
+      <%= f.text_field :name, value: @category.name %>
     </div>
 
     <div class="field">
@@ -15,7 +15,7 @@
 
     <div class="form-actions">
       <%= f.submit "Save changes", class: "creator-btns" %>
+  <% end %>
        <%= button_to "Delete this category", category_path(id: params[:id]), method: :delete %>
     </div>
-  <% end %>
 </div>
