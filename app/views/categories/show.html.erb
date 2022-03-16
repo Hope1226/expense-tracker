@@ -19,14 +19,14 @@
     </div>
 
     <div class="categories-container">
-      <% @category.entities.each do |category| %>
-        <%= render 'card', category: category %>
+      <% @category.entities.each do |transaction| %>
+        <%= render 'transaction', transaction: transaction %>
       <% end %> 
     </div>
   </div>
   <div class="categories-actions-outer">
     <div class="categories-actions-inner">
-      <%= link_to raw(image_tag 'add-icon.svg'), new_category_path %>
+      <%= link_to raw(image_tag 'add-icon.svg'), new_category_transaction_path({category_id: @category.id}) %>
     </div>
   </div>
 </div>
