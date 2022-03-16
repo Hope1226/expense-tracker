@@ -75,7 +75,7 @@ main {
 .main-categories-page {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: auto 1fr;
+  grid-template-rows: auto 1fr 80px;
   grid-gap: 10px;
 }
 
@@ -181,6 +181,10 @@ small {
   justify-content: center;
   align-items: center;
   padding: 10px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 .categories-actions-inner {
@@ -230,7 +234,7 @@ small {
 
 .trans-subheadings {
   font-size: var(--heading-size);
-  font-weight: 500;
+  font-weight: 300;
 }
 
 .sub-uppercase {
@@ -252,7 +256,7 @@ small {
 }
 
 .trans-dash-date > * {
-  color: #cecece
+  color: var(--text-color)
 }
 
 .trans-footer {
@@ -260,3 +264,42 @@ small {
   justify-content: space-between;
   align-items: center;
 }
+
+.healthcare {
+  background-image: linear-gradient(to right bottom, #1FA2FF 0%, #1FA2FF  51%, #12D8FA  100%);
+}
+
+.clothing {
+  background-image: linear-gradient(to right bottom, #FF512F 0%, #FF512F  51%, #DD2476  100%);
+}
+
+
+.grosseries {
+  background-image: linear-gradient(to right bottom, #FF512F 0%, #FF512F  51%, #F09819  100%);
+}
+
+
+
+.entertainment {
+  background-image: linear-gradient(to right bottom, #DA22FF 0%, #DA22FF  51%, #9733EE  100%);
+}
+
+.housing {
+  background-image: linear-gradient(to right bottom, #02AAB0 0%, #02AAB0  51%, #00CDAC  100%);
+}
+
+
+.miscellaneous {
+  background-image: linear-gradient(to right bottom, #e52d27 0%, #e52d27  51%, #b31217  100%);
+}
+
+
+.utilities {
+  background-image: linear-gradient(to right bottom, #16222A 0%, #16222A  51%, #3A6073  100%);
+}
+
+
+.transportation {
+  background-image: linear-gradient(to right bottom, #232526 0%, #232526  51%, #414345  100%);
+}
+
