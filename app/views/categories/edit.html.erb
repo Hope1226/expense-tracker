@@ -1,0 +1,21 @@
+<div class="forms-container">
+  <h2>Update category</h1>
+  <%=form_with(model: @group, url: category_path, method: :put, local: true) do |f| %>
+    <div class="field">
+      <%= f.label(:name, "Name") %>
+      <%= f.text_field :name %>
+    </div>
+
+    <div class="field">
+      <%= f.label "Chose icon type" %><br />
+      <%= f.collection_select :icon, Group::ICONS, :to_s, :humanize %>
+    </div>
+
+    <%= f.hidden_field :user_id, value: current_user.id %>
+
+    <div class="form-actions">
+      <%= f.submit "Save changes", class: "creator-btns" %>
+       <%= button_to "Delete this category", category_path(id: params[:id]), method: :delete %>
+    </div>
+  <% end %>
+</div>
