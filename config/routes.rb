@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 
   resources :users, only: %i[show]
 
+  delete '/transactions', to: 'transactions#destroy_all'
+
   # Defines the root path route ("/")
   # root "articles#index"
 end

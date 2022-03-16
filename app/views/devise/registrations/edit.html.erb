@@ -1,4 +1,8 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<div class="main-categories-page">
+  <div class="header category-header">
+    <%= link_to raw(image_tag "backwards-arrow.svg"), categories_path %>
+    <h2 class="main-headings">Edit <%= resource_name.to_s.humanize %></h2>
+  </div>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>

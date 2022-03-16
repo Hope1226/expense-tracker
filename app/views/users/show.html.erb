@@ -1,9 +1,14 @@
-<div class="user-profile">
+<div class="main-categories-page">
+  <div class="header category-header">
+    <%= link_to raw(image_tag "backwards-arrow.svg"), categories_path %>
+    <h2 class="main-headings">Main menu</h2>
+  </div>
   <div class="image-container">
     <%= image_tag "profile-img.svg"%>
   </div>
   <div class="user-profile-actions">
     <%= link_to "Edit Profile", edit_user_registration_path, class: "nav-links"%>
+    <%= button_to "Clear all records", transactions_path, method: :delete %>
     <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "nav-links"%>
   </div>
 </div>

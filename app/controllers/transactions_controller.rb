@@ -32,6 +32,13 @@ class TransactionsController < ApplicationController
     end
   end
 
+  def destroy_all
+    Entity.all.destroy_all
+    respond_to do |format|
+      format.html { redirect_to user_path(current_user.id), notice: 'All records  successfully removed' }
+    end
+  end
+
   def update
     @transaction = Entity.find(params[:id])
 
