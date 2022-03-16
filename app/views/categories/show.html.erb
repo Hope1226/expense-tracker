@@ -1,7 +1,8 @@
 <div class="main-categories-page">
-  <div class="header">
-    <%= link_to raw(image_tag "menu-icon.svg"), user_path({id: current_user.id}) %>
-    <h1 class="main-headings"><%= @category.name %></h1>  
+  <div class="header category-header">
+    <%= link_to raw(image_tag "backwards-arrow.svg"), categories_path %>
+    <h1 class="main-headings"><%= @category.name %></h1>
+    <%= link_to raw(image_tag "settings-icon.svg"), edit_category_path({id: @category.id}) %>
   </div>
   
   <div class="main-content">
