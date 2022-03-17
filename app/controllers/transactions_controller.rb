@@ -19,7 +19,7 @@ class TransactionsController < ApplicationController
     @new_entity = Entity.new(entity_params)
 
     if @new_entity.save
-      redirect_to category_path(id: params[:category_id]), notice: 'Spending successfully added'
+      redirect_to category_path(id: params[:category_id]), notice: 'Transaction successfully added'
     else
       render :new, alert: 'Oops, Something went wrong'
     end
@@ -28,12 +28,12 @@ class TransactionsController < ApplicationController
   def destroy
     Entity.find(params[:id]).delete
     respond_to do |format|
-      format.html { redirect_to category_path(id: params[:category_id], notice: 'Category successfully removed') }
+      format.html { redirect_to category_path(id: params[:category_id], notice: 'Transaction successfully removed') }
     end
   end
 
   def destroy_all
-    Entity.all.destroy_all
+    Entity.all.where(user_id: current_user.id).destroy_all
     respond_to do |format|
       format.html { redirect_to user_path(current_user.id), notice: 'All records  successfully removed' }
     end
@@ -44,7 +44,10 @@ class TransactionsController < ApplicationController
 
     respond_to do |format|
       if @transaction.update(entity_params)
-        format.html { redirect_to category_transaction_path({ id: @transaction.id, category_id: @transaction.group_id }), notice: 'Changes was successfully saved' }
+        format.html do
+          redirect_to category_transaction_path({ id: @transaction.id, category_id: @transaction.group_id }),
+                      notice: 'Changes successfully saved'
+        end
       else
         format.html { render :edt, status: :unprocessable_entity }
       end

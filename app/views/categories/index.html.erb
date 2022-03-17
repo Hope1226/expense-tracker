@@ -19,7 +19,7 @@
     </div>
 
     <div class="categories-container">
-      <% @categories.each do |category| %>
+      <% @categories.includes(:entities).each do |category| %>
         <%= render 'card', category: category %>
       <% end %> 
     </div>
