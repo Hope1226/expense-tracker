@@ -55,7 +55,7 @@ main {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
-  background: var(--mani-bg);
+  background-image: linear-gradient(to left bottom, var(--mani-bg), #ffffffff ) ;
 }
 
 .main-headings {
@@ -69,7 +69,8 @@ main {
 .header {
   display: grid;
   grid-template-columns: auto 1fr;
-  padding: 20px 10px;background: var(--main-color);
+  padding: 20px 10px;
+  background-image: linear-gradient(to left bottom, #1b589e, #1FA2FF);
 }
 
 .main-categories-page {
@@ -193,7 +194,7 @@ small {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
-  background: var(--second-color);
+  background-image: linear-gradient(to left bottom, #5fb523, var(--second-color));
   border-radius: 50%;
 }
 
@@ -266,40 +267,179 @@ small {
 }
 
 .healthcare {
-  background-image: linear-gradient(to right bottom, #1FA2FF 0%, #1FA2FF  51%, #12D8FA  100%);
+  background-image: linear-gradient(to right bottom, #1FA2FF, #12D8FA);
 }
 
 .clothing {
-  background-image: linear-gradient(to right bottom, #FF512F 0%, #FF512F  51%, #DD2476  100%);
+  background-image: linear-gradient(to right bottom, #FF512F, #DD2476);
 }
 
 
 .grosseries {
-  background-image: linear-gradient(to right bottom, #FF512F 0%, #FF512F  51%, #F09819  100%);
+  background-image: linear-gradient(to right bottom, #FF512F, #F09819);
 }
 
 
 
 .entertainment {
-  background-image: linear-gradient(to right bottom, #DA22FF 0%, #DA22FF  51%, #9733EE  100%);
+  background-image: linear-gradient(to right bottom, #DA22FF, #9733EE);
 }
 
 .housing {
-  background-image: linear-gradient(to right bottom, #02AAB0 0%, #02AAB0  51%, #00CDAC  100%);
+  background-image: linear-gradient(to right bottom, #02AAB0, #00CDAC);
 }
 
 
 .miscellaneous {
-  background-image: linear-gradient(to right bottom, #e52d27 0%, #e52d27  51%, #b31217  100%);
+  background-image: linear-gradient(to right bottom, #e52d27, #b31217);
 }
 
 
 .utilities {
-  background-image: linear-gradient(to right bottom, #16222A 0%, #16222A  51%, #3A6073  100%);
+  background-image: linear-gradient(to right bottom, #16222A, #3A6073);
 }
 
 
 .transportation {
-  background-image: linear-gradient(to right bottom, #232526 0%, #232526  51%, #414345  100%);
+  background-image: linear-gradient(to right bottom, #232526, #414345);
 }
 
+.main-profile-container {
+  background-image: linear-gradient(to left bottom, #1b589e, #1FA2FF);
+}
+
+.main-profile-header {
+  background: transparent;
+}
+
+.main-menu-profile {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 2fr;
+
+}
+
+.main-menu-header {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr auto;
+  align-items: center;
+  justify-items: center;
+}
+
+.image-container {
+  width: 200px;
+  height: 200px;
+  max-width: 300px;
+  background: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-container img {
+  width: 100%;
+}
+
+.main-menu-texts {
+  font-size: var(--heading-size);
+  font-weight: var(--heding-font-weight);
+  color: var(--heading-color);
+}
+
+.user-profile-actions {
+  display: flex;
+  flex-direction: column;
+  padding: 30px 0 0 10px;
+}
+
+.profile-field {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.profile-field img {
+  padding: 10px;
+  border-radius: 50%;
+  border: 1px solid #eeeeee;
+  align-self: center;
+}
+
+.profile-field :last-child {
+  padding: 20px 0;
+  flex: 1;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.forms-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.field {
+  display: flex;
+  background: var(--heading-color);
+  border-top: 1px solid #eeeeee;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.field > * {
+  flex: 1;
+  padding: 20px;
+  border: none;
+  font-size: var(--heading-size);
+  font-weight: var(--heding-font-weight);
+  color: var(--text-color);
+}
+
+.field select {
+  flex: 1;
+}
+
+.field label {
+  flex: 2;
+}
+
+.form-actions,
+.porfile-form-actions {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-actions > * {
+  padding: 20px;
+  text-align: center;
+  border: none;
+  font-size: var(--heading-size);
+  font-weight: var(--heding-font-weight);
+  border-radius: 5px;
+  background: #ffffff;
+}
+
+input[type="submit"] {
+  background-image: linear-gradient(to left bottom, #1b589e, #1FA2FF);
+  color: var(--heading-color);
+}
+
+.form-actions a {
+  box-shadow: 0 0 5px 0 #eeeeee;
+}
+
+input:focus {
+  outline: none;
+}
+
+.porfile-form-actions input[type="submit"] {
+  padding: 20px;
+  text-align: center;
+  border: none;
+  font-size: var(--heading-size);
+  font-weight: var(--heding-font-weight);
+  border-radius: 5px;
+  background-image: linear-gradient(to left bottom, #1b589e, #1FA2FF);
+  color: var(--heading-color);
+}
