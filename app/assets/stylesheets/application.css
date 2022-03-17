@@ -443,3 +443,19 @@ input:focus {
   background-image: linear-gradient(to left bottom, #1b589e, #1FA2FF);
   color: var(--heading-color);
 }
+
+.remember-field {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px
+}
+
+.form-post-actions {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
