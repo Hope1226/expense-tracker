@@ -13,18 +13,18 @@
  *= require_tree .
  *= require_self
  */
- @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
- @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 
 :root {
   --main-color: #3778c2;
   --second-color: #5fb523;
   --text-color: #434b54;
-  --mani-bg: #eeeeee;
+  --mani-bg: #eee;
   --heading-size: 24px;
   --text-size: 16px;
   --main-font: 'Montserrat', sans-serif;
-  --heading-color: #ffffff;
+  --heading-color: #fff;
   --text-font-weight: 200;
   --heding-font-weight: 400;
   --amount-font-weight: 600;
@@ -32,16 +32,16 @@
 
 html {
   -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 *,
 *::before,
 *::after {
   -webkit-box-sizing: inherit;
-     -moz-box-sizing: inherit;
-          box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
   padding: 0;
   margin: 0;
   list-style: none;
@@ -56,7 +56,7 @@ main {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
-  background-image: linear-gradient(to left bottom, var(--mani-bg), #ffffffff ) ;
+  background-image: linear-gradient(to left bottom, var(--mani-bg), #ffff);
 }
 
 .main-headings {
@@ -71,7 +71,7 @@ main {
   display: grid;
   grid-template-columns: auto 1fr;
   padding: 20px 10px;
-  background-image: linear-gradient(to left bottom, #1b589e, #1FA2FF);
+  background-image: linear-gradient(to left bottom, #1b589e, #1fa2ff);
 }
 
 .main-categories-page {
@@ -154,7 +154,7 @@ main {
 }
 
 .card-content-footer {
-  border-top: 1px solid #eeeeee;
+  border-top: 1px solid #eee;
 }
 
 small {
@@ -171,6 +171,7 @@ small {
   padding: 30px 0;
   background: #434b5457;
 }
+
 .outer-icon-container {
   padding: 10px;
   display: grid;
@@ -220,7 +221,7 @@ small {
 .trans-dashboard {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(auto 3);
+  grid-template-rows: repeat(3, auto);
   padding: 10px;
   background: var(--heading-color);
   grid-gap: 10px;
@@ -231,7 +232,7 @@ small {
   grid-template-columns: auto 1fr;
   grid-gap: 10px;
   align-items: center;
-  border-bottom: 1px solid #eeeeee;
+  border-bottom: 1px solid #eee;
 }
 
 .trans-subheadings {
@@ -247,7 +248,7 @@ small {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr auto;
-  border-bottom: 1px solid #eeeeee;
+  border-bottom: 1px solid #eee;
   padding-bottom: 10px;
 }
 
@@ -258,7 +259,7 @@ small {
 }
 
 .trans-dash-date > * {
-  color: var(--text-color)
+  color: var(--text-color);
 }
 
 .trans-footer {
@@ -268,45 +269,39 @@ small {
 }
 
 .healthcare {
-  background-image: linear-gradient(to right bottom, #1FA2FF, #12D8FA);
+  background-image: linear-gradient(to right bottom, #1fa2ff, #12d8fa);
 }
 
 .clothing {
-  background-image: linear-gradient(to right bottom, #FF512F, #DD2476);
+  background-image: linear-gradient(to right bottom, #ff512f, #dd2476);
 }
-
 
 .grosseries {
-  background-image: linear-gradient(to right bottom, #FF512F, #F09819);
+  background-image: linear-gradient(to right bottom, #ff512f, #f09819);
 }
 
-
-
 .entertainment {
-  background-image: linear-gradient(to right bottom, #DA22FF, #9733EE);
+  background-image: linear-gradient(to right bottom, #da22ff, #9733ee);
 }
 
 .housing {
-  background-image: linear-gradient(to right bottom, #02AAB0, #00CDAC);
+  background-image: linear-gradient(to right bottom, #02aab0, #00cdac);
 }
-
 
 .miscellaneous {
   background-image: linear-gradient(to right bottom, #e52d27, #b31217);
 }
 
-
 .utilities {
-  background-image: linear-gradient(to right bottom, #16222A, #3A6073);
+  background-image: linear-gradient(to right bottom, #16222a, #3a6073);
 }
-
 
 .transportation {
   background-image: linear-gradient(to right bottom, #232526, #414345);
 }
 
 .main-profile-container {
-  background-image: linear-gradient(to left bottom, #1b589e, #1FA2FF);
+  background-image: linear-gradient(to left bottom, #1b589e, #1fa2ff);
 }
 
 .main-profile-header {
@@ -317,7 +312,6 @@ small {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 2fr;
-
 }
 
 .main-menu-header {
@@ -332,7 +326,7 @@ small {
   width: 200px;
   height: 200px;
   max-width: 300px;
-  background: #ffffff;
+  background: #fff;
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -364,14 +358,14 @@ small {
 .profile-field img {
   padding: 10px;
   border-radius: 50%;
-  border: 1px solid #eeeeee;
+  border: 1px solid #eee;
   align-self: center;
 }
 
 .profile-field :last-child {
   padding: 20px 0;
   flex: 1;
-  border-bottom: 1px solid #eeeeee;
+  border-bottom: 1px solid #eee;
 }
 
 .forms-container form {
@@ -382,8 +376,8 @@ small {
 .field {
   display: flex;
   background: var(--heading-color);
-  border-top: 1px solid #eeeeee;
-  border-bottom: 1px solid #eeeeee;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
 }
 
 .field > * {
@@ -418,16 +412,16 @@ small {
   font-size: var(--heading-size);
   font-weight: var(--heding-font-weight);
   border-radius: 5px;
-  background: #ffffff;
+  background: #fff;
 }
 
 input[type="submit"] {
-  background-image: linear-gradient(to left bottom, #1b589e, #1FA2FF);
+  background-image: linear-gradient(to left bottom, #1b589e, #1fa2ff);
   color: var(--heading-color);
 }
 
 .form-actions a {
-  box-shadow: 0 0 5px 0 #eeeeee;
+  box-shadow: 0 0 5px 0 #eee;
 }
 
 input:focus {
@@ -441,7 +435,7 @@ input:focus {
   font-size: var(--heading-size);
   font-weight: var(--heding-font-weight);
   border-radius: 5px;
-  background-image: linear-gradient(to left bottom, #1b589e, #1FA2FF);
+  background-image: linear-gradient(to left bottom, #1b589e, #1fa2ff);
   color: var(--heading-color);
 }
 
@@ -450,7 +444,7 @@ input:focus {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20px
+  gap: 20px;
 }
 
 .form-post-actions {
@@ -476,7 +470,7 @@ input:focus {
 .hero-txt {
   font-family: 'Lobster', cursive;
   font-size: 50px;
-  color: #eeeeee;
+  color: #eee;
   text-shadow: 2px -1px 5px #4f5255;
 }
 
@@ -494,13 +488,13 @@ input:focus {
   font-size: var(--heading-size);
   font-weight: var(--heding-font-weight);
   border-radius: 5px;
-  background: #eeeeee;
+  background: #eee;
   color: var(--text-color);
 }
 
 .main-page-actions a:last-child {
-  background: #1FA2FF;
-  color: #ffffff;
+  background: #1fa2ff;
+  color: #fff;
 }
 
 .alert,
@@ -513,9 +507,9 @@ input:focus {
 }
 
 @keyframes popin {
-  0% {padding: 0}
-  50% {padding: 5px}
-  100% {padding: 0}
+  0% { padding: 0; }
+  50% { padding: 5px; }
+  100% { padding: 0; }
 }
 
 .alert {
