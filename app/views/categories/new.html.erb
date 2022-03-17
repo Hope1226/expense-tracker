@@ -1,0 +1,25 @@
+<div class="main-categories-page">
+  <div class="header category-header">
+    <%= link_to raw(image_tag "backwards-arrow.svg"), categories_path %>
+    <h2 class="main-headings">Add category</h2>
+  </div>
+  <div class="forms-container">
+    <%=form_with(model: @group, url: categories_path, method: :post, local: true) do |f| %>
+      <div class="field">
+        <%= f.text_field :name, placeholder: "Category name"%>
+      </div>
+
+      <div class="field">
+        <%= f.label "Icon type" %>
+        <%= f.collection_select :icon, Group::ICONS, :to_s, :humanize %>
+      </div>
+
+      <%= f.hidden_field :user_id, value: current_user.id %>
+
+      <div class="form-actions">
+        <%= f.submit "Add Category", class: "creator-btns" %>
+        <%= link_to "Cancel", categories_path, class: 'delete-btns'%>
+      </div>
+    <% end %>
+  </div>
+  </div>

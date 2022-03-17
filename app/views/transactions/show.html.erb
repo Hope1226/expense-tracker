@@ -1,1 +1,64 @@
-<h2>One transaction are gonnna be here</h2>
+<div class="main-categories-page">
+  <div class="header category-header">
+    <%= link_to raw(image_tag "backwards-arrow.svg"), category_path({id: @transaction.group_id}) %>
+    <h1 class="main-headings">Details</h1>
+    <%= link_to raw(image_tag "settings-icon.svg"), edit_category_transaction_path({id: @transaction.id, category_id: @transaction.group_id}) %>
+  </div>
+
+  <div class="main-content trans-main-content">
+    <div class="trans-dashboard">
+      <div class="trans-dashboard-header">
+        <%case @transaction.group.icon %>
+          <%when "entertainment"%>
+            <div class="icon-container entertainment">
+              <%=image_tag "entertainment.svg" %>
+            </div>
+          <%when "grosseries"%>
+            <div class="icon-container grosseries">
+              <%=image_tag "grosseries.svg" %>
+            </div>
+          <%when "utilities"%>
+            <div class="icon-container utilities">
+              <%=image_tag "utilities.svg" %>
+            </div>
+          <%when "housing"%>
+            <div class="icon-container housing">
+              <%=image_tag "housing.svg" %>
+            </div>
+          <%when "clothing"%>
+            <div class="icon-container clothing">
+              <%=image_tag "clothing.svg" %>
+            </div>
+          <%when "healthcare"%>
+            <div class="icon-container healthcare">
+              <%=image_tag "healthcare.svg" %>
+            </div>
+          <%when "transportation"%>
+            <div class="icon-container transportation">
+              <%=image_tag "transportation.svg" %>
+            </div>
+          <%when "miscellaneous"%>
+            <div class="icon-container miscellaneous">
+              <%=image_tag "miscellaneous.svg" %>
+            </div>
+        <% end %>
+        <div class="trans-headings">
+          <h2 class="trans-subheadings"><%= @transaction.name %><h2>
+        </div>
+      </div>
+      <div class="trans-dashboard-content">
+        <h2 class="trans-subheadings"> Transaction # 10000<%= @transaction.id %></h2>
+        <div>
+          <small class="trans-dash-date">
+            <%= image_tag 'calendar-icon.svg' %>
+            <p><%= @transaction.created_at.strftime("%d %B, %Y at %I:%M%p") %><p>
+          </small>
+        </div>
+      </div>
+      <div class="trans-footer">
+        <h2 class="trans-subheadings sub-uppercase">Total spending</h2>
+        <h2 class="trans-subheadings">$ <%= @transaction.amount %>.00</h2>
+      </div>
+    </div>
+  </div>
+</div>
