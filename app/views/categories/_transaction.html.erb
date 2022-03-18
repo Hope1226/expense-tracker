@@ -1,0 +1,14 @@
+<div class="category-cards transaction-cards">
+  <div class="card-content transaction-content">
+    <div class="card-content-header">
+      <h2 class="subheadings"><%= transaction.name %></h2>
+      <h2 class="subheadings category-amount">$ <%= transaction.amount %>.00</h2>
+    </div>
+    <div class="card-content-footer">
+      <small><%= transaction.created_at.strftime("%d %B, %Y") %></small>
+    </div>
+  </div>
+  <div class="category-actions">
+    <%= link_to raw(image_tag "arrow-forward.svg"), category_transaction_path({id: transaction.id, category_id: transaction.group_id}), class: "arrows-links"%>
+  </div>
+</div>

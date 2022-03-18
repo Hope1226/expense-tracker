@@ -1,0 +1,33 @@
+<div class="main-categories-page">
+  <div class="header category-header">
+    <%= link_to raw(image_tag "backwards-arrow.svg"), categories_path %>
+    <h1 class="main-headings"><%= @category.name %></h1>
+    <%= link_to raw(image_tag "settings-icon.svg"), edit_category_path({id: @category.id}) %>
+  </div>
+  
+  <div class="main-content">
+    <div class="main-dashbord">
+      <h2 class="subheadings">Total spendings for <%= @category.name %><h2>
+      <div class="innder-dashboard">
+        <h3 class="total-ammount"> $
+        <% if @category.calculate_total.positive? %>
+        - <%= @category.calculate_total %>.00
+        <% else %>
+          <%= @category.calculate_total %>.00
+        <% end %>
+        </h3>
+      </div>
+    </div>
+
+    <div class="categories-container">
+      <% @category.entities.order(created_at: :desc).each do |transaction| %>
+        <%= render 'transaction', transaction: transaction %>
+      <% end %> 
+    </div>
+  </div>
+  <div class="categories-actions-outer">
+    <div class="categories-actions-inner">
+      <%= link_to raw(image_tag 'add-icon.svg'), new_category_transaction_path({category_id: @category.id}) %>
+    </div>
+  </div>
+</div>

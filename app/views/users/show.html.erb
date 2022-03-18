@@ -1,0 +1,48 @@
+<div class="main-categories-page main-profile-container">
+  <div class="header category-header main-profile-header">
+    <%= link_to raw(image_tag "backwards-arrow.svg"), categories_path %>
+    <h2 class="main-headings">Main menu</h2>
+  </div>
+  <div class="main-menu-profile">
+    <div class="main-menu-header">
+      <div class="image-container">
+        <%= image_tag "profile-img.svg"%>
+      </div>
+      <h2 class="main-menu-texts"><%= current_user.name %></h2>
+    </div>
+    <div class="user-profile-actions">
+      <div class="profile-field">
+        <%= image_tag 'settings-icon.svg'%>
+        <%= link_to "Edit Profile", edit_user_registration_path, class: "main-menu-texts"%>
+      </div>
+
+      <div class="profile-field">
+        <%= image_tag 'clear-icon.svg'%>
+        <%= button_to "Clear all records", 
+            transactions_path, 
+            method: :delete,
+            style: "
+               font-size: var(--heading-size);
+               font-weight: var(--heding-font-weight);
+               color: var(--heading-color);
+               border: none;
+               background: none;
+            " %>
+      </div>
+
+      <div class="profile-field">
+        <%= image_tag 'logout.svg'%>
+        <%= button_to "Sign out",
+            destroy_user_session_path,
+            method: :delete,
+             style: "
+               font-size: var(--heading-size);
+               font-weight: var(--heding-font-weight);
+               color: var(--heading-color);
+               border: none;
+               background: none;
+            " %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+<div class="main-categories-page">
+  <div class="header category-header">
+    <%= link_to raw(image_tag "backwards-arrow.svg"), category_transaction_path(id: @transaction.id, category_id: @transaction.group_id) %>
+    <h2 class="main-headings">Update transaction</h2>
+  </div>
+  <div class="forms-container">
+    <h2></h1>
+    <%=form_with(model: @entity, url: category_transaction_path, method: :put, local: true) do |f| %>
+      <div class="field">
+        <%= f.text_field :name, value: @transaction.name %>
+      </div>
+
+      <div class="field">
+        <%= f.number_field :amount, value: @transaction.amount %>
+      </div>
+
+      <%= f.hidden_field :user_id, value: current_user.id %> 
+      <%= f.hidden_field :group_id, value: params[:category_id] %> 
+
+      <div class="form-actions">
+        <%= f.submit "Save changes", class: "creator-btns" %>
+    <% end %>
+      <%= button_to "Delete this category",
+          category_transaction_path(id: params[:id]),
+          method: :delete,
+          style: "
+          text-align: center;
+          border: none;
+          font-size: var(--heading-size);
+          font-weight: var(--heding-font-weight);
+          border-radius: 5px;
+          background: #ffffff;
+          " %>
+      </div>
+  </div>
+  </div>

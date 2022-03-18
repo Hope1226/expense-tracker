@@ -1,0 +1,32 @@
+<div class="main-categories-page">
+  <div class="header">
+    <%= link_to raw(image_tag "menu-icon.svg"), user_path({id: current_user.id}) %>
+    <h1 class="main-headings">Categories</h1>  
+  </div>
+  
+  <div class="main-content">
+    <div class="main-dashbord">
+      <h2 class="subheadings">Total spending for current period:<h2>
+      <div class="innder-dashboard">
+        <h3 class="total-ammount"> $
+        <% if current_user.total_expense.positive? %>
+        - <%= current_user.total_expense %>.00
+        <% else %>
+          <%= current_user.total_expense %>.00
+        <% end %>
+        </h3>
+      </div>
+    </div>
+
+    <div class="categories-container">
+      <% @categories.includes(:entities).each do |category| %>
+        <%= render 'card', category: category %>
+      <% end %> 
+    </div>
+  </div>
+  <div class="categories-actions-outer">
+    <div class="categories-actions-inner">
+      <%= link_to raw(image_tag 'add-icon.svg'), new_category_path %>
+    </div>
+  </div>
+</div>
